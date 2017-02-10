@@ -1,3 +1,6 @@
+/*
+score: 9 + 1(extra credit)
+comments: good coding!Try to consider more about corner cases
 /**
  * Created by Rose on 1/21/17. Assignment for your lecture 2. Please finish all
  * the questions under 'Assignment'. Assignment 2 includes 3 interview prepare
@@ -46,7 +49,7 @@ public class Assignment2 {
 	 * Security Tax is 6.2% of the salary. If the salary is more than 8900, the
 	 * Social Security Tax is 6.2% of 106,800.
 	 */
-	public static double socialSecurityTax(Employee employee) {
+	public static double socialSecurityTax(Employee employee) {            //correct
 		double ssTax = 0.0;
 		double eSalary = employee.salary;
 		if (eSalary <= 8900 && eSalary > 0) {
@@ -66,7 +69,7 @@ public class Assignment2 {
 	 * and 60(exclusive), rate is 5% of salary; If the employee is above 60,
 	 * rate is 6% of salary.
 	 */
-	public static double insuranceCoverage(Employee employee) {
+	public static double insuranceCoverage(Employee employee) {                        //correct
 		double iCoverage = 0.0;
 		int eAge = employee.age;
 		double eSalary = employee.salary;
@@ -91,7 +94,7 @@ public class Assignment2 {
 	 * salary is 500, Jenny's salary is 1200, you should print: John Alice Jenny
 	 */
 
-	public static void sortSalary(Employee e1, Employee e2, Employee e3) {
+	public static void sortSalary(Employee e1, Employee e2, Employee e3) {                    //correct
 		Employee[] EmployeeArray = new Employee[3];
 		EmployeeArray[0] = e1;
 		EmployeeArray[1] = e2;
@@ -119,7 +122,7 @@ public class Assignment2 {
 	 * Try to add a new method in Employee class: public void raiseSalary(double
 	 * byPercent)
 	 */
-	public static void tripleSalary(Employee employee) {
+	public static void tripleSalary(Employee employee) {                        //correct
 		employee.salary = 3 * employee.salary;
 		System.out.println(employee.name + "'s salary raising to three times is " + employee.salary);// write
 																										// your
@@ -133,7 +136,7 @@ public class Assignment2 {
 	 * Write a method to determine whether a number is prime
 	 */
 
-	public static boolean isPrime(int n) {
+	public static boolean isPrime(int n) {                  //correct
 		int x = 2;
 		if (n == 1) {
 			return false;
@@ -154,7 +157,7 @@ public class Assignment2 {
 	 * result has only one digit. For example: Given n = 38, the process is
 	 * like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
 	 */
-	public static int addDigits(int n) {
+	public static int addDigits(int n) {                               //correct
 
 		while (n >= 10) {
 			int tensDigit = (int) (n / 10);
@@ -172,7 +175,7 @@ public class Assignment2 {
 	 * another prime factor 7. Note that 1 is typically treated as an ugly
 	 * number.
 	 */
-	public static boolean isUgly(int n) {
+	public static boolean isUgly(int n) {                 //miss one corner case: if n is 0, you cannot jump out the first while loop
 		while (n % 2 == 0) {
 			n = n / 2;
 		}
@@ -199,6 +202,8 @@ public class Assignment2 {
 	 * There is no change after swap()! Do you know the reason why my swap
 	 * failed? Write your understanding of the reason and explain it.
 	 */
+	
+	//correct
 	/*
 	 * write your understanding here. Java expresses the value of reference, not
 	 * the object itself. So when we write a function to swap the Employee 
